@@ -25,7 +25,6 @@ public class Rest_Assured_2 {
         requestSpecBuilder2.setBaseUri("https://reqres.in/api").
                 addHeader("Content-Type","application/json");
         requestSpecification2 = RestAssured.with().spec(requestSpecBuilder2.build());
-        // ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
         responseSpecification = RestAssured.expect().
                 contentType(ContentType.JSON);
     }
@@ -35,16 +34,16 @@ public class Rest_Assured_2 {
         Response response=
                 given().
                         spec(requestSpecification).
-                        when().
+                when().
                         get("/posts").
-                        then().
+                then().
                         spec(responseSpecification).statusCode(200).log().status().log().headers().
                         extract().response();
         assertThat(response.path("[39].userId"), is(equalTo(4)));
-        JSONArray arr = new JSONArray(response.asString());
+        JSONArray array = new JSONArray(response.asString());
         int flag = 1;
-        for(int i=0;i<arr.length();i++){
-            Object obj = arr.getJSONObject(i).get("title");
+        for(int i=0;i<array.length();i++){
+            Object obj = array.getJSONObject(i).get("title");
             if( !(obj instanceof String) ) {
                 flag = 0;
                 break;
@@ -63,5 +62,6 @@ public class Rest_Assured_2 {
                 put("/users").
         then().
                 spec(responseSpecification).statusCode(200).log().status().log().body().log().headers();
+        //THIS LOGS ALL THE HEADERS FOR THE GIVEN RESPONSE
     }
 }
