@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+    <suite name="All Test Suite">
+        <test verbose="2" preserve-order="true" name="C:\Users\mayakaushik\API_TRACK\REST_2">
+            <classes>
+                <class name = "Rest_Assured_2">
+                    <methods>
+                        <include name="get_Call_fun" />
+                        <include name="put_Call_fun" />
+                    </methods>
+                </class>
+            </classes>
+    </test>
+</suite>
