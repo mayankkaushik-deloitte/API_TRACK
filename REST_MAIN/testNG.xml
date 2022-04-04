@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:\Users\mayakaushik\API_TRACK\REST_MAIN">
+        <classes>
+            <class name = "BaseClass">
+                <methods>
+                    <include name="authenticationTest" />
+                </methods>
+            </class>
+            <class name="addTaskTest">
+                <methods>
+                    <include name="addTask" />
+                </methods>
+            </class>
+            <class name="UserValidationTest">
+                <methods>
+                    <include name="validateUser" />
+                </methods>
+            </class>
+            <class name="GetTaskTest">
+                <methods>
+                    <include name="getTask" />
+                </methods>
+            </class>
+            <class name="PaginationTest">
+                <methods>
+                    <include name="paginationFor2"/>
+                    <include name="paginationFor5"/>
+                    <include name="paginationFor10"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
