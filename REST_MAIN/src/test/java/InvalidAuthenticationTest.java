@@ -31,11 +31,11 @@ public class InvalidAuthenticationTest extends BaseClass{
             try {
                 Response responseLogin = request.body(loginDetails).post("/user/login");
             }catch(Exception e){
-                System.out.println(e.getMessage() + "duplicate values addded");
+                logger.info(e.getMessage() + "duplicate values addded");
             }
         }
         catch (Exception e){
-            System.out.println(e.getMessage() + "Duplicate registration");
+            logger.info(e.getMessage() + "Duplicate registration");
         }
     }
 }

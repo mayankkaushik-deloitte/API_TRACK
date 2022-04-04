@@ -15,10 +15,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import static io.restassured.RestAssured.given;
 @Listeners(ExtentReport.class)
 public class BaseClass {
+    static Logger logger = Logger.getLogger(String.valueOf(BaseClass.class));
 
     public String username;
     public String email;
@@ -28,7 +30,7 @@ public class BaseClass {
 
     @BeforeMethod
     public void registerUser() throws IOException {
-        System.out.println(
+        logger.info(
                 "=============REGISTER==============="
         );
         File file = new File("C:\\Users\\mayakaushik\\API_TRACK\\REST_MAIN\\src\\data\\regDetails.xlsx");
@@ -47,7 +49,7 @@ public class BaseClass {
 
     @Test
     public void authenticationTest() throws IOException {
-        System.out.println("===================AUTH TEST=====================");
+        logger.info("===================AUTH TEST=====================");
         RestAssured.baseURI = "https://api-nodejs-todolist.herokuapp.com";
         RequestSpecification request = RestAssured.given();
         String payload = getPayloadString(username,email,password);
@@ -57,7 +59,7 @@ public class BaseClass {
         String jsonString = responseFromGeneratedToken.getBody().asString();
         tokenGenerated = JsonPath.from(jsonString).get("token");
         token = tokenGenerated;
-        System.out.println(tokenGenerated);
+        logger.info("The token value is : " + tokenGenerated);
         request.header("Authorization", "Bearer" + tokenGenerated)
                 .header("Content-Type", "application/json");
         String loginDetails = "{\n" +

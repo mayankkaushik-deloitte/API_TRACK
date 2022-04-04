@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 public class PaginationTest extends BaseClass{
     @Test(priority = 1)
     public void paginationFor2(){
-        System.out.println(tokenGenerated);
         RestAssured.baseURI = "https://api-nodejs-todolist.herokuapp.com";
         RequestSpecification request2 = RestAssured.given();
         request2.header("Authorization","Bearer "+ tokenGenerated)

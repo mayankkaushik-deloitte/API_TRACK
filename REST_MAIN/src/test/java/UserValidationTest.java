@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 public class UserValidationTest extends BaseClass{
     @Test
     public void validateUser(){
-        System.out.println(token);
-
         RestAssured.baseURI = "https://api-nodejs-todolist.herokuapp.com/user/me";
         RequestSpecification request = RestAssured.given();
         request.header("Authorization","Bearer "+ token)
