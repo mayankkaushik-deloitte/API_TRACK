@@ -1,7 +1,9 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+@Listeners(ExtentReport.class)
 
 public class GetTaskTest extends BaseClass {
     @Test

@@ -5,10 +5,12 @@ import io.restassured.specification.RequestSpecification;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+@Listeners(ExtentReport.class)
 
 public class addTaskTest extends BaseClass{
     @Test
