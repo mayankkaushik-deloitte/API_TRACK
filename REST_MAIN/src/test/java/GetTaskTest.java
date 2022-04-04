@@ -12,7 +12,7 @@ public class GetTaskTest extends BaseClass {
         RequestSpecification request = RestAssured.given();
         request.header("Authorization","Bearer "+ token)
                 .header("Content-Type","application/json");
-        Response responsegetTask = request.get();
-        responsegetTask.prettyPrint();
+        Response responseGetTask = request.get();
+        responseGetTask.prettyPrint();
     }
 }

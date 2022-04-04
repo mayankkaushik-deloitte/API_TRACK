@@ -4,6 +4,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -40,12 +41,7 @@ public class addTaskTest extends BaseClass{
             String jsonString = responseAddTask.getBody().asString();
             String task1 = JsonPath.from(jsonString).get("data.description");
             System.out.println(task1);
-            if (task.equals(task1)){
-                System.out.println("Task is validated");
-            }
-            else{
-                System.out.println("Invalid task");
-            }
+            Assert.assertEquals(task,task1);
             responseAddTask.prettyPrint();
             wb.close();
             inputStream.close();

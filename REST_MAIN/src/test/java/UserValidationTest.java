@@ -12,7 +12,7 @@ public class UserValidationTest extends BaseClass{
         RequestSpecification request = RestAssured.given();
         request.header("Authorization","Bearer "+ token)
                 .header("Content-Type","application/json");
-        Response responsevalidateUser = request.get();
-        responsevalidateUser.prettyPrint();
+        Response responseValidateUser = request.get();
+        responseValidateUser.prettyPrint();
     }
 }
