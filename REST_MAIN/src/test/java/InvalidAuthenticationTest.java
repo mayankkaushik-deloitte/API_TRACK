@@ -35,6 +35,5 @@ public class InvalidAuthenticationTest extends BaseClass{
         catch (Exception e){
             System.out.println(e.getMessage() + "Duplicate registration");
         }
-
     }
 }

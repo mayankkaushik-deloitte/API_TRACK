@@ -30,7 +30,7 @@ public class BaseClass {
         System.out.println(
                 "=============REGISTER==============="
         );
-        File file = new File("C:\\Users\\mayakaushik\\API_TRACK\\REST_MAIN\\src\\regDetails.xlsx");
+        File file = new File("C:\\Users\\mayakaushik\\API_TRACK\\REST_MAIN\\src\\data\\regDetails.xlsx");
         FileInputStream inputStream = new FileInputStream(file);
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = wb.getSheet("Sheet1");

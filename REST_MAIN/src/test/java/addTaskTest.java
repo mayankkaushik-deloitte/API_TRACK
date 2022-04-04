@@ -17,7 +17,7 @@ public class addTaskTest extends BaseClass{
         RequestSpecification request = RestAssured.given();
         request.header("Authorization", "Bearer " + tokenGenerated)
                 .header("Content-Type", "application/json");
-        FileInputStream inputStream = new FileInputStream("C:\\Users\\mayakaushik\\API_TRACK\\REST_MAIN\\src\\Add20Task.xlsx");
+        FileInputStream inputStream = new FileInputStream("C:\\Users\\mayakaushik\\API_TRACK\\REST_MAIN\\src\\data\\Add20Task.xlsx");
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = wb.getSheet("Sheet1");
         int rows = sheet.getPhysicalNumberOfRows();
