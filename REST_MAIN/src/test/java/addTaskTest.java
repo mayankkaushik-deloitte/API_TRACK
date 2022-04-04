@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class addTaskTest extends BaseClass{
-
     @Test
     public void addTask() throws IOException {
         System.out.println("================Add Task==================");

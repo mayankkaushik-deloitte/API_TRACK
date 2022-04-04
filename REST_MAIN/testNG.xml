@@ -30,6 +30,11 @@
                     <include name="paginationFor10"/>
                 </methods>
             </class>
+            <class name="InvalidAuthenticationTest">
+                <methods>
+                    <include name="InvalidAUTest" />
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

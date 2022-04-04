@@ -19,9 +19,9 @@ import static io.restassured.RestAssured.given;
 
 public class BaseClass {
 
-    private String username;
-    private String email;
-    private String password;
+    public String username;
+    public String email;
+    public  String password;
     public static String tokenGenerated;
     public static String token;
 
@@ -40,11 +40,8 @@ public class BaseClass {
         XSSFCell cell3 = row1.getCell(2);
         XSSFCell cell4 = row1.getCell(3);
         username = cell1.getStringCellValue();
-//        System.out.println(username);
         email = cell2.getStringCellValue();
-//        System.out.println(email);
         password = cell3.getStringCellValue();
-//        System.out.println(password);
     }
 
     @Test
